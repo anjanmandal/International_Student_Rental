@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Listing</title>
+    <!-- Link to Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            padding-top: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .input-group-text {
+            width: 42px; /* Ensures uniform width for icon containers */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Listing</h1>
+        <form action="/add-listing" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-home"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                    </div>
+                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imageURL">Image URL</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-image"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="imageURL" name="imageURL" placeholder="Enter image URL">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter location" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-flag"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="country" name="country" placeholder="Enter country" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript and jQuery for Bootstrap components -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

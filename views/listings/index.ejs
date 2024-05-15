@@ -1,0 +1,39 @@
+<% layout("layouts/boilerplate") -%>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Available Listings</h1>
+        <div class="row">
+            <% allListings.forEach(function(listing) { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= listing.title %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= listing.location %>, <%= listing.country %></h6>
+                            <p class="card-text"><%= listing.description %></p>
+                            <div class="card-footer">
+                                <p class="card-text">Price: $<%= listing.price.toLocaleString("en-US") %></p>
+                                <a href="/listings/<%= listing._id %>" class="btn btn-primary full-width-btn">More</a>
+                                <a href="/listings/update/<%= listing._id %>" class="btn btn-warning half-width-btn">Update Info</a>
+                                <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-danger half-width-btn">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <!-- Add Listing Button -->
+        <div class="row">
+            <div class="col-12">
+                <a href="/add-listing" class="btn btn-success add-listing-btn">Add Listing</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript and jQuery for Bootstrap components -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
